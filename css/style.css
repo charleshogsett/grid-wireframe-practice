@@ -24,6 +24,7 @@ body {
   max-width: 320px;
   margin: 0 auto;
 }
+
 header {
   grid-area: header;
   background-color: #96036a;
@@ -41,36 +42,93 @@ header {
   text-align: center;
   border-radius: 10px;
 }
+h2 {
+  display: none;
+}
 main {
   grid-area: main;
+  
   background-color: #40c080;
   padding: 15px;
   border-radius: 10px;
-  
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
+.col{
+   display: flex;
+   flex-direction: column;
+   justify-content: space between;
+   min-height: 170px;
+}
 article {
+ 
   background-color: rgb(248, 8, 108);
   color: white;
   padding: 15px;
   border-radius: 10px;
-  margin-bottom: 10px;
   text-align: center;
+  
 }
 
+/* Bottom Aside */
 .bottom-aside {
   grid-area: bottom-aside;
-  background-color:rgb(13, 178, 207);  
+  background-color: rgb(13, 178, 207);
   color: white;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
 }
+
+/* Footer */
 footer {
   grid-area: footer;
-  background-color:rgb(235, 121, 15);  
+  background-color: rgb(235, 121, 15);
   color: white;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
 }
+
+/* ---------- MEDIA QUERY FOR LARGER SCREENS ---------- */
+@media (min-width: 768px) {
+  .grid-container {
+    max-width: 1000px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "top-aside main bottom-aside"
+      "footer footer footer";
+    align-items: stretch; /* Make rows fill evenly */
+  }
+
+  .top-aside,
+  .bottom-aside,
+  main {
+    min-height: 300px; /* Stretch to match each other */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  h2 {
+    display: block;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  article {
+    flex: 1;
+    margin: 0;
+  }
+}
+✅ 

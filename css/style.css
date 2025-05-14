@@ -1,0 +1,76 @@
+@import url("./reset.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #aaa;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "top-aside"
+    "main"
+    "bottom-aside"
+    "footer";
+  gap: 10px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+header {
+  grid-area: header;
+  background-color: #96036a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.top-aside {
+  grid-area: top-aside;
+  background-color: #0d548f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+main {
+  grid-area: main;
+  background-color: #40c080;
+  padding: 15px;
+  border-radius: 10px;
+  
+  gap: 10px;
+}
+article {
+  background-color: rgb(248, 8, 108);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.bottom-aside {
+  grid-area: bottom-aside;
+  background-color:rgb(13, 178, 207);  
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+footer {
+  grid-area: footer;
+  background-color:rgb(235, 121, 15);  
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
